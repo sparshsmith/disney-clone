@@ -95,6 +95,10 @@ const ImageTitle = styled.div`
         height: 100%;
         object-fit: contain;
     }
+
+    @media (max-width: 768px) {
+        margin-top: 20px;
+    }
 `
 
 const Controls = styled.div`
@@ -118,6 +122,16 @@ const PlayButton = styled.button`
     &:hover {
         background: rgb(198, 198, 198);
     }
+
+    @media (max-width: 768px) {
+        height: 45px;
+        padding: 0px 12px;
+        font-size: 12px;
+        margin: 0px 10px 0px 0px;
+        img {
+          width: 25px;
+        }
+      }
 `;
 
 const TrailerButton = styled(PlayButton)`

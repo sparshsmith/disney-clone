@@ -7,9 +7,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function ImgSlider() {
-
     let settings = {
         dots: true,
+        mobileFirst: true,
+        variableWidth: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
@@ -29,13 +30,22 @@ export default function ImgSlider() {
                     <img src='/images/slider-badag.jpg' />
                 </a>
             </Wrap>
+            <Wrap>
+                <a>
+                    <img src='/images/slider-scale.jpg' />
+                </a>
+            </Wrap>
+            <Wrap>
+                <a>
+                    <img src='/images/slider-scales.jpg' />
+                </a>
+            </Wrap>
         </Caraousel>
     )
 }
 
 const Caraousel = styled(Slider)`
     margin-top: 20px;
-
     & > button {
         opacity: 0;
         z-index: 1;
@@ -60,6 +70,22 @@ const Caraousel = styled(Slider)`
     .slick-list {
         overflow: visible;
     }
+
+    .slick-slide {
+        @media (max-width: 768px) { 
+            float: left;
+            height: 100%;
+            min-height: 1px;
+            
+            img{
+
+                max-width: 100vw !important; 
+                height: 200px;
+                object-fit: cover;
+            }
+        }
+       
+     }
 
 `
 const Wrap = styled.div`
